@@ -1,23 +1,26 @@
-# ollama-sre
-Local LLM for SRE use
+# 🧠 ollama-sre
 
-# Local AI LLM Setup Guide
+A structured instructional for running and customizing local large language models (LLMs) using [Ollama](https://ollama.com/) on macOS with M-series silicon.
 
-This repository is a practical guide for setting up and using local large language models (LLMs) on your own machine. Whether you're an SRE, Linux tinkerer, or just curious about self-hosted AI, this is designed to get you running quickly and understanding the moving parts.
+This project is built for developers, SREs, and engineers who want **full control over their local AI stack**—from installation to prompt design to persistent custom personas.
 
-## 🎯 Goals
+---
 
-- Run open-source LLMs (like LLaMA2, Mistral, or Gemma) locally
-- Compare local vs. hosted AI tools
-- Set up a lightweight development workflow using CLI or browser interfaces
-- Enable further integration with LangChain or vector databases (optional)
+## 🔧 Requirements
 
-## 🧰 Who is this for?
+- macOS (M1, M2, or later recommended)
+- [Homebrew](https://brew.sh/)
+- Terminal familiarity (zsh or bash)
+- ~10GB free disk space per model
 
-Developers, SREs, and technical users who:
-- Prefer not to use cloud APIs for AI
-- Want more control over models and data
-- Have basic command line and Python familiarity
+---
+
+## 🚀 Getting Started
+
+### 1. Install Homebrew (if not already)
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 ## 📂 Repo Structure
 ```ai-local-llm-setup/
@@ -44,4 +47,17 @@ ollama run mistral            # Run Mistral 7B
 ollama pull gemma:2b          # Download Gemma 2B model
 ollama list                   # List all models downloaded
 ollama create mymodel -f Modelfile   # Custom model (advanced)
+
+Modify modelfile
+
+FROM mistral
+
+SYSTEM "You are a poetic AI assistant. Respond in metaphor and rhythm."
+PARAMETER temperature 0.8
+
+Build and run:
+
+ollama create poetic-mistral -f advanced/poetic-mistral/Modelfile
+ollama run poetic-mistral
+
 
