@@ -1,0 +1,38 @@
+# macOS system files
+.DS_Store
+
+# Logs
+*.log
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+env/
+venv/
+.venv/
+
+# Ollama downloaded models (if you store them locally)
+models/
+ollama/
+
+# Temporary/editor files
+*~
+*.swp
+*.swo
+*.tmp
+
+# Shell history (if you save or share wrappers)
+.history
+.bash_history
+.zsh_history
+
+# VS Code / JetBrains IDEs
+.vscode/
+.idea/
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Markdown preview caches
+.markdownlint.json
