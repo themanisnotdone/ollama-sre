@@ -1,4 +1,4 @@
-# ai-local-llmodel-setup
+# ollama-sre
 Local LLM for SRE use
 
 # Local AI LLM Setup Guide
